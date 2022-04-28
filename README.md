@@ -3,6 +3,10 @@
 
 此Python脚本基于卷积神经网络和带有注意力机制的Seq2Seq模型，具体实现参考了此[Bai-Shang](https://github.com/bai-shang/crnn_seq2seq_ocr_pytorch)的GitHub仓库中的PyTorch实现。
 
+# 数据集
+* 训练用数据集在此处下载 [https://drive.google.com/drive/folders/1DZpBRpum4DZoB6gZ8VL8ejjzaj3HcihT?usp=sharing](https://drive.google.com/drive/folders/1DZpBRpum4DZoB6gZ8VL8ejjzaj3HcihT?usp=sharing)
+* 130917词数据集在此处下载 [https://drive.google.com/drive/folders/1RkbzTk6jomvxzjw_0HrKXiTtUiB119zQ?usp=sharing](https://drive.google.com/drive/folders/1RkbzTk6jomvxzjw_0HrKXiTtUiB119zQ?usp=sharing)
+
 # 安装
 请直接下载GitHub仓库到本机文件夹（用```path-to-folder/```表示）。使用此脚本，需要安装3.5以上版本的Python和pip。需要一个可运行bash的类Unix环境。
 * 在Windows 10下，请安装Ubuntu子系统。参见[此链接](https://www.ssl.com/zh-CN/%E5%A6%82%E4%BD%95/%E5%90%AF%E7%94%A8linux%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85ubuntu-Windows-10/)。
@@ -60,6 +64,7 @@ Reading Completed, Press Any Key to Exit. Ambula Baniha.
 # 例子
 ## 《少年中国说》现代印刷版
 ![001](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/001.png)
+
 ```bash
 python3 readmanchu.py --img_path ./examples/001.png
 
@@ -100,4 +105,163 @@ GESE SAKDASA HŪWAŠAN ADALI ASIHATA KANGSANGGE GESE SAKDASA BULEKU
 
 Reading Completed, Press Any Key to Exit. Ambula Baniha.
 
+```
+
+## 《满文老档》圈点版
+![002](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/002.png)
+
+```bash
+python3 readmanchu.py --img_path ./examples/002.png
+Analyzing: ./examples/002.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+TONIKI FUKA SINDAHA HERGEN I DANGSE 
+
+TU SURE HAN I SUCUNGGA FULAHŪN GŪLMAHŪN ENIYA ANIYA 
+
+BIJAI ICE INENGI GEREN BEISE EMBUSA BITHEI COOHAI 
+
+HAFASA SUNJACI GING WAJIME AMPA YAMUN DE ISAFI 
+
+MENI MENI GŪS GŪSAI FAIDAHA ABKA GEREME 
+
+SURE HAN GEREN BEISE AMBASA BEI GAIFI 
+
+TANGSE DE GENEFI 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.
+```
+
+![003](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/003.png)
+
+```bash
+python3 readmanchu.py --img_path ./examples/003.png
+Analyzing: ./examples/003.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+ABKA TE ILAN JERGI NIYAKŪRAFI UJUN JERGI HENGKILEHE TERECI BEDEREFI 
+
+HAN YAMUN DE TUCI TEHI MANGI GEREN BEISE AMBASA 
+
+MENI MENI GŪSA GŪSAI JERGI BODOME ILATA 
+
+JERGI NIYAKŪRAFI UJUTE JERGI HENGKILEHE TERE HENGKILERE DE 
+
+HAN I JUWE ASHAN DE JUWE NIYALMA ILIFI EMU NIJALMA 
+
+TENTEKI BEILE TENTEI AMBAN ANIYA SE BAHA 
+
+SENME GEREN BI GAIFI HENGKILEMBI SENE HŪLAHA 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.
+```
+
+## 《玉匣记》
+![005](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/005.png)
+
+
+```bash
+python3 readmanchu.py --img_path ./examples/005.png --pretrained 0 --rot_angle -1 --block_size 55 --threshold 54 --word_minimum 600
+Analyzing: ./examples/005.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+BU EOI HIYAGI BIFAHABI UJE I DEBTELI I ULU 
+
+FUCIHI ENDURI BANJIHA INENGGI 
+
+YUYASAJAN GENGNI U SINGPI GING 
+
+DUI TUNG FIRUSENDUUHAKŪNGGE 
+
+JU G'O KUNG MING NI TUJAFI YABURE BE TUWARANGGE 
+
+TUJINI YABUREININA JUWE ERIN BEI TUWARANGGEI 
+
+BI IOFI GINGNI KITHETELEBUCI YABUCI OJORAKŪN INENGGI BE TUWARANGGE 
+
+TU 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.
+```
+
+## 《异域录》
+
+![007](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/007.png)
+
+
+```
+python3 readmanchu.py --img_path ./examples/007.png
+Analyzing: ./examples/007.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+JENGGUREKUNJERENE IRAMIN KASI BEI ALIFI CELAN HALAME 
+
+GUJUJE BOB I DEYENGGE UESIHUN BEI ELFIFI FUNGLU JETEIE 
+
+FUNGNEHEN BEK ELIRE NACALA LANCAHAKŪNG BIHE BI LAHEJERAKŪNGGE 
+
+FULAHŪN HONAIN ANAYA BANJIHA AJIGAN NCI BOBI BANJIRENGGE 
+
+NADAHACINA BANI YADAINGGŪ BEJE NIMEKUNGGE ŠUTUME HŪWAKŪFI 
+
+GANJU NIKAN BITHENGDUKE LJENGNACIBUHE GODO HADUK 
+
+AKŪ UBANJABURENGGE ARŠARKI KOLAK BEK CADUME ANGSILAME 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.  
+```
+
+## 《御制避暑山庄诗》
+![010](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/010.png)
+
+```bash
+python3 readmanchu.py --img_path ./examples/010.png --rot_angle -1 --threshold 12 --block_size 35 --vertical_minimum 3000
+Analyzing: ./examples/010.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+JUGŪN GIKI HECEN DE HANCI T AMASI JULESI 
+
+JUWE INENGGI BAIBURAKŪ NA SECI BIGAN 
+
+HALI BUI BADARAMBUHANGGE GŪNIN DE TEBUCI E 
+
+TUMEN BAITA UMAI TOKANURAKŪ TU JERECI DEN 
+
+NECIN GORO HANCI I MURU BE KEMNEFI E INI CISUI 
+
+BANJINAHA ALINGADAI ARBUŠUNEHINGGE JAKDAŠUN 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.
+```
+
+## 奏折一份
+
+![018](https://raw.githubusercontent.com/tyotakuki/ManchuOCR/main/examples/018.png)
+
+```bash
+python3 readmanchu.py --img_path ./examples/018.png
+Analyzing: ./examples/018.png
+Using Möllendorff Alphabet List: ABCDEFGHIJKLMNOPQRSTUVWXYZŽŠŪ-'
+
+AHASI ŠANGGANULEME 
+
+WESIMBURENGGE 
+
+HESE BI BAIREN JALIN JAKAN ILI I UHERK 
+
+KADALARA DA FUJUHŪNGGA BOOLANJIHA BADA DULEKE ANIYA 
+
+BOLORI NIOWANGGAJA TURUN KOWARAN COOHAI BARGIJAHA HACINGGA 
+
+JEKU BEI NARHŪN JEKU SALIBUME BODOCI COOHA 
+
+TOME JUWAN JAKŪTA HUSE FUNCEME GŪRBUMBU AFABUCI 
+
+ANCARA JEKU BI GEMP HACIHAJEME TON I SONGKO 
+
+CALU TE AFABUHA BIME DULEKEN ANIYA 
+
+WESIMBUFI NOWANGGAJA TURUN KŪWARAN TE USE FAHA 
+
+Reading Completed, Press Any Key to Exit. Ambula Baniha.
 ```
