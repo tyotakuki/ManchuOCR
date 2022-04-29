@@ -95,11 +95,11 @@ def main():
     imagename = cfg.img_path
 
     if cfg.pretrained == 0:
-        my_encoder = "/Users/zhuohuizhang/Downloads/ManchuOCR/crnn_seq2seq_ocr_pytorch-master/model/encoder_0.pth"
-        my_decoder = "/Users/zhuohuizhang/Downloads/ManchuOCR/crnn_seq2seq_ocr_pytorch-master/model/decoder_0.pth"
+        my_encoder = "./model/encoder_0.pth"
+        my_decoder = "./model/decoder_0.pth"
     elif cfg.pretrained == 1:
-        my_encoder = "/Users/zhuohuizhang/Downloads/ManchuOCR/crnn_seq2seq_ocr_pytorch-master/model/encoder_1.pth"
-        my_decoder = "/Users/zhuohuizhang/Downloads/ManchuOCR/crnn_seq2seq_ocr_pytorch-master/model/decoder_1.pth"
+        my_encoder = "./model/encoder_1.pth"
+        my_decoder = "./model/decoder_1.pth"
     else:
         sys.exit("Unknown Pretrained Model!")
 
