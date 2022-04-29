@@ -8,8 +8,13 @@
 * 130917词数据集在此处下载 [https://drive.google.com/drive/folders/1RkbzTk6jomvxzjw_0HrKXiTtUiB119zQ?usp=sharing](https://drive.google.com/drive/folders/1RkbzTk6jomvxzjw_0HrKXiTtUiB119zQ?usp=sharing)
 
 # 安装
-请直接下载GitHub仓库到本机文件夹（用```path-to-folder/```表示）。使用此脚本，需要安装3.5以上版本的Python和pip。需要一个可运行bash的类Unix环境。
-* 在Windows 10下，请安装Ubuntu子系统。参见[此链接](https://www.ssl.com/zh-CN/%E5%A6%82%E4%BD%95/%E5%90%AF%E7%94%A8linux%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85ubuntu-Windows-10/)。
+请直接下载GitHub仓库到本机文件夹（用```path-to-folder/```表示）。使用此脚本，需要安装3.5以上版本的Python和pip。需要一个可运行bash的类Unix环境。**请注意**：```model```文件夹中的预训练模型，应该单独下载，并且确保四个文件的md5正确：
+- ```md5 encoder_0.pth  = af53b90ad122ecb7e6abf2c84ce356dd```
+- ```md5 decoder_0.pth = 1be02bde5b70cb3cd72cd71a85fdfb1e```
+- ```md5 encoder_1.pth = 0d822d8916c407f44d5ed56eb42eb31c```
+- ```md5 decoder_1.pth =  610a3f009e88e6bea5d654ad4c752916```
+
+此外，在Windows 10下，请安装Ubuntu子系统。参见[此链接](https://www.ssl.com/zh-CN/%E5%A6%82%E4%BD%95/%E5%90%AF%E7%94%A8linux%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85ubuntu-Windows-10/)。
 
 ## Python3和pip的安装
 
