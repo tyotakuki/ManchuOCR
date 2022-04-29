@@ -89,6 +89,7 @@ cfg = parser.parse_args()
 
 def main():
 
+
     global_rot_angle = cfg.rot_angle
     global_padding = cfg.padding
 
